@@ -32,9 +32,16 @@ function run(diceNum){
 
 function checkLaddersAndSnakers(){
     return new Promise(async(resolve, reject)=>{
-        let froms = [[29.4, 0], [88.2, 0], [29.4, -9.8]]
-        let tos = [[39.2, -9.8], [49, 0], [9.8, -29.4]]
+        let froms = [[29.4, 0], [88.2, 0], [29.4, -9.8], [0, -19.6], [9.8, -19.6], [49, -19.6], 
+        [78.4, -29.4], [39.2, -49], [9.8, -58.8], [19.6, -58.8], [68.6, -58.8], [78.4, -58.8],
+        [39.2, -68.6], [49, -78.4], [9.8, -88.2]]
+        let tos = [[39.2, -9.8], [49, 0], [9.8, -29.4], [0, -49], [19.6, -9.8], [49, -29.4], 
+        [68.6, -39.2], [58.8, -68.6], [0, -68.6], [19.6, -29.4], [88.2, 49], [78.4, -39.2],
+        [19.6, -39.2], [58.8, -88.2], [9.8, -78.4]]
         
+        console.log("marginLeft():", marginLeft() );
+        console.log("marginTop():", marginTop() );
+
         for(let i=0; i<tos.length; i++){
             if(marginLeft() == froms[i][0] && marginTop() == froms[i][1]){
                 document.querySelector('#red').style.marginLeft = `${tos[i][0]}vmin`;

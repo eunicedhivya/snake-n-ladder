@@ -2,7 +2,7 @@ let stopEvent = false;
 document.querySelector('#red').style.marginLeft = '0vmin';
 document.querySelector('#red').style.marginTop = '0vmin';
 
-boxNumbers();
+// boxNumbers();
 // roll()
 
 document.addEventListener("keydown", async(e)=>{
@@ -13,7 +13,8 @@ document.addEventListener("keydown", async(e)=>{
         console.log(diceNum);
         document.querySelector('#dicenumber').innerHTML = diceNum;
         await new Promise(resolve => setTimeout(resolve, 400))
-        await run(diceNum);
+        // await run(diceNum);
+        await run(3);
         await new Promise(resolve => setTimeout(resolve, 400))
         stopEvent = false;
     }
@@ -36,9 +37,13 @@ function checkLaddersAndSnakers(){
         [78.4, -29.4], [39.2, -49], [9.8, -58.8], [19.6, -58.8], [68.6, -58.8], [78.4, -58.8],
         [39.2, -68.6], [49, -78.4], [9.8, -88.2]]
         let tos = [[39.2, -9.8], [49, 0], [9.8, -29.4], [0, -49], [19.6, -9.8], [49, -29.4], 
-        [68.6, -39.2], [58.8, -68.6], [0, -68.6], [19.6, -29.4], [88.2, 49], [78.4, -39.2],
+        [68.6, -39.2], [58.8, -68.6], [0, -68.6], [19.6, -29.4], [88.2, -49], [78.4, -39.2],
         [19.6, -39.2], [58.8, -88.2], [9.8, -78.4]]
-        
+                
+        let message = [[39.2, -9.8], [49, 0], [9.8, -29.4], [0, -49], [19.6, -9.8], [49, -29.4], 
+        [68.6, -39.2], [58.8, -68.6], [0, -68.6], [19.6, -29.4], [88.2, -49], [78.4, -39.2],
+        [19.6, -39.2], [58.8, -88.2], [9.8, -78.4]]
+                
         console.log("marginLeft():", marginLeft() );
         console.log("marginTop():", marginTop() );
 
@@ -46,6 +51,8 @@ function checkLaddersAndSnakers(){
             if(marginLeft() == froms[i][0] && marginTop() == froms[i][1]){
                 document.querySelector('#red').style.marginLeft = `${tos[i][0]}vmin`;
                 document.querySelector('#red').style.marginTop = `${tos[i][1]}vmin`;
+                await new Promise(resolve => setTimeout(resolve, 400))
+                alert(message[i])
                 await new Promise(resolve => setTimeout(resolve, 400))
                 break
             }

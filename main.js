@@ -10,15 +10,25 @@ document.addEventListener("keydown", async(e)=>{
     if(e.keyCode === 40 && !stopEvent){
         console.log("trigger key")
         let diceNum = await roll();
+        let isOutofRange =  checkRange(diceNum);
         console.log(diceNum);
         document.querySelector('#dicenumber').innerHTML = diceNum;
         await new Promise(resolve => setTimeout(resolve, 400))
-        // await run(diceNum);
-        await run(3);
-        await new Promise(resolve => setTimeout(resolve, 400))
+        if(!isOutofRange){
+            await run(diceNum);
+            await new Promise(resolve => setTimeout(resolve, 400))
+        }
         stopEvent = false;
     }
 })
+
+function checkRange(diceNum){
+    let isOutofRange = false;
+    if(marginTop() == -88.2 && (marginLeft()+Number((diceNum*-9.8).toFixed(1))) < 0){
+        isOutofRange = true;
+    }
+    return isOutofRange;
+}
 
 function run(diceNum){
     return new Promise(async(resolve, reject)=>{
@@ -35,14 +45,14 @@ function checkLaddersAndSnakers(){
     return new Promise(async(resolve, reject)=>{
         let froms = [[29.4, 0], [88.2, 0], [29.4, -9.8], [0, -19.6], [9.8, -19.6], [49, -19.6], 
         [78.4, -29.4], [39.2, -49], [9.8, -58.8], [19.6, -58.8], [68.6, -58.8], [78.4, -58.8],
-        [39.2, -68.6], [49, -78.4], [9.8, -88.2]]
+        [39.2, -68.6], [49, -78.4], [9.8, -88.2], [68.6, -78.4]]
         let tos = [[39.2, -9.8], [49, 0], [9.8, -29.4], [0, -49], [19.6, -9.8], [49, -29.4], 
         [68.6, -39.2], [58.8, -68.6], [0, -68.6], [19.6, -29.4], [88.2, -49], [78.4, -39.2],
         [19.6, -39.2], [58.8, -88.2], [9.8, -78.4]]
                 
         let message = [[39.2, -9.8], [49, 0], [9.8, -29.4], [0, -49], [19.6, -9.8], [49, -29.4], 
         [68.6, -39.2], [58.8, -68.6], [0, -68.6], [19.6, -29.4], [88.2, -49], [78.4, -39.2],
-        [19.6, -39.2], [58.8, -88.2], [9.8, -78.4]]
+        [19.6, -39.2], [58.8, -88.2], [9.8, -78.4], [88.2, -68.6]]
                 
         console.log("marginLeft():", marginLeft() );
         console.log("marginTop():", marginTop() );

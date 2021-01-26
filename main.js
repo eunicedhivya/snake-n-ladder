@@ -5,6 +5,10 @@ document.querySelector('#red').style.marginTop = '0vmin';
 // boxNumbers();
 // roll()
 
+document.getElementById("closeBtn").addEventListener("click", function() {
+    document.querySelector('.model').style.display = "none";
+});
+
 document.addEventListener("keydown", async(e)=>{
     // console.log(event.keyCode);
     if(e.keyCode === 40 && !stopEvent){
@@ -45,10 +49,10 @@ function checkLaddersAndSnakers(){
     return new Promise(async(resolve, reject)=>{
         let froms = [[29.4, 0], [88.2, 0], [29.4, -9.8], [0, -19.6], [9.8, -19.6], [49, -19.6], 
         [78.4, -29.4], [39.2, -49], [9.8, -58.8], [19.6, -58.8], [68.6, -58.8], [78.4, -58.8],
-        [39.2, -68.6], [49, -78.4], [9.8, -88.2], [68.6, -78.4]]
+        [39.2, -68.6], [49, -78.4], [9.8, -88.2], [68.6, -78.4], [68.6, -29.4]]
         let tos = [[39.2, -9.8], [49, 0], [9.8, -29.4], [0, -49], [19.6, -9.8], [49, -29.4], 
         [68.6, -39.2], [58.8, -68.6], [0, -68.6], [19.6, -29.4], [88.2, -49], [78.4, -39.2],
-        [19.6, -39.2], [58.8, -88.2], [9.8, -78.4]]
+        [19.6, -39.2], [58.8, -88.2], [9.8, -78.4], [58.8, -9.8]]
                 
         let message = [[39.2, -9.8], [49, 0], [9.8, -29.4], [0, -49], [19.6, -9.8], [49, -29.4], 
         [68.6, -39.2], [58.8, -68.6], [0, -68.6], [19.6, -29.4], [88.2, -49], [78.4, -39.2],
@@ -62,7 +66,9 @@ function checkLaddersAndSnakers(){
                 document.querySelector('#red').style.marginLeft = `${tos[i][0]}vmin`;
                 document.querySelector('#red').style.marginTop = `${tos[i][1]}vmin`;
                 await new Promise(resolve => setTimeout(resolve, 400))
-                alert(message[i])
+                // alert(message[i])
+                document.querySelector('#message').innerHTML = message[i]
+                document.querySelector('.model').style.display = "block";
                 await new Promise(resolve => setTimeout(resolve, 400))
                 break
             }

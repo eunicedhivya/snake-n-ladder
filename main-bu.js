@@ -4,7 +4,7 @@ document.querySelector('#red').style.marginTop = '0vmin';
 
 
 
-boxNumbers();
+// boxNumbers();
 
 $(".category").on("click", function(d){
     console.log(d.target.id);
@@ -40,8 +40,8 @@ document.getElementById("rolldice").addEventListener("click", async(e)=>{
         document.querySelector('#dicenumber').innerHTML = diceNum;
         await new Promise(resolve => setTimeout(resolve, 400))
         if(!isOutofRange){
-            await run(diceNum);
-            // await run(32);
+            // await run(diceNum);
+            await run(3);
             await new Promise(resolve => setTimeout(resolve, 400))
         }
         stopEvent = false;
@@ -85,16 +85,33 @@ function run(diceNum){
 
 function checkLaddersAndSnakers(){
     return new Promise(async(resolve, reject)=>{
+        let froms = [[29.4, 0], [88.2, 0], [29.4, -9.8], [0, -19.6], [9.8, -19.6], [49, -19.6], 
+        [78.4, -29.4], [39.2, -49], [9.8, -58.8], [19.6, -58.8], [68.6, -58.8], [78.4, -58.8],
+        [39.2, -68.6], [49, -78.4], [9.8, -88.2], [68.6, -78.4], [68.6, -78.4]]
 
-        console.log(froms)
+        let tos = [[39.2, -9.8], [49, 0], [9.8, -29.4], [0, -49], [19.6, -9.8], [49, -29.4], 
+        [68.6, -39.2], [58.8, -68.6], [0, -68.6], [19.6, -29.4], [88.2, -49], [78.4, -39.2],
+        [19.6, -39.2], [58.8, -88.2], [9.8, -78.4], [58.8, -9.8], [88.2, -68.8]]
+                
+        let message = [[16, "Headline goes here", "In disarray, Republicans search for message and messenger", "https://thefederal.com/opinion/in-disarray-republicans-search-for-message-and-messenger/"], 
+        [6, 49, 0], [39, 9.8, -29.4], [60, 0, -49], [18, 19.6, -9.8], [35, 49, -29.4], 
+        [48, 68.6, -39.2], [74, 58.8, -68.6], [80, 0, -68.6], [38, 19.6, -29.4], [51, 88.2, -49], [49, 78.4, -39.2],
+        [43, 19.6, -39.2], [94, 58.8, -88.2], [82, 9.8, -78.4], [14, 58.8, -9.8], [71, 88.2, -68.8]]
+                
+        // console.log("marginLeft():", marginLeft() );
+        // console.log("marginTop():", marginTop() );
+
         for(let i=0; i<tos.length; i++){
             if(marginLeft() == froms[i][0] && marginTop() == froms[i][1]){
                 document.querySelector('#red').style.marginLeft = `${tos[i][0]}vmin`;
                 document.querySelector('#red').style.marginTop = `${tos[i][1]}vmin`;
                 await new Promise(resolve => setTimeout(resolve, 400))
-                document.querySelector('.modal-headline').innerHTML = data[i]["headline"];
-                document.querySelector('.modal-desc').innerHTML = data[i]["bodytext"];
-                document.querySelector('.modal-link').href=data[i]["link"];
+                // alert(message[i])
+                // document.querySelector('#message').innerHTML = message[i]
+                document.querySelector('.modal-headline').innerHTML = message[i][1];
+                document.querySelector('.modal-desc').innerHTML = message[i][2];
+                document.querySelector('.modal-desc').innerHTML = message[i][2];
+                document.querySelector('.modal-link').href=message[i][3];
                 document.querySelector('.model').style.display = "block";
                 await new Promise(resolve => setTimeout(resolve, 400))
                 break
@@ -145,18 +162,17 @@ function marginTop(){
 
 function roll(){
     return new Promise(async(resolve, reject)=>{
-        let rollpos = [3, 6, 4]
+        let rollpos = [3, 9]
         let myIndex = 0;
         console.log(rollpos[myIndex]);
         myIndex = (myIndex+1)%(rollpos.length);
         let diceNumb = Math.floor(Math.random() * 6) + 1;
         let values = [[0, -360], [-180, -360], [-180, 270], [-180, 90], [270, 180], [90, 90]]
-        // let values = [[0, -360], [-180, -360], [-180, 270], [0, 90], [270, 180], [90, 90]]
         document.querySelector('#cube_inner').style.transform = `rotateX(360deg) rotateY(360deg)`;
         await new Promise(resolve => setTimeout(resolve, 750))
         document.querySelector('#cube_inner').style.transform = `rotateX(${values[diceNumb-1][0]}deg) rotateY(${values[diceNumb-1][1]}deg)`;
         await new Promise(resolve => setTimeout(resolve, 750))
-        resolve(diceNumb);
+        resolve(diceNumb) ;
     })
 }
 

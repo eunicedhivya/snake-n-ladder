@@ -1,8 +1,13 @@
 body {
-  background-color: lightgray;
+  background-color: #5f3200;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.categories {
+  list-style: none;
+  text-align: left;
 }
 
 #main {
@@ -27,21 +32,28 @@ body {
   border: 0.1vmin solid black;
   text-align: center;
   line-height: 9.8vmin;
-  font-size: 2.5vmin;
+  font-size: 10px;
   /* background-color: lightgreen; */
   box-sizing: border-box;
+  font-weight: bold;
+  color: red;
 }
 
 #side {
   position: absolute;
   top: 1vmin;
   left: 1vmin;
-  height: 25vmin;
-  width: 35vmin;
+  min-height: 25vmin;
+  width: 26vmin;
   border: 0.2vmin;
-  background-color: lightgreen;
+  background-color: #c6ad74;
   text-align: center;
   font-size: 3.5vmin;
+  padding: 20px;
+}
+
+.dice-section {
+  height: 25vmin;
 }
 
 #cube_outer {
@@ -49,6 +61,7 @@ body {
   width: 8vmin;
   perspective: 30vmin;
   margin: auto;
+  margin-bottom: 25px;
 }
 
 #cube_inner {
@@ -62,7 +75,7 @@ body {
   height: 100%;
   width: 100%;
   position: absolute;
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 
 #front {
@@ -72,7 +85,8 @@ body {
   transform: rotateY(180deg) translateZ(4vmin);
 }
 #left {
-  transform: rotateY(-90deg) translateX(0vmin);
+  transform: rotateY(-90deg) translateX(-4vmin);
+  transform-origin: left;
 }
 #right {
   transform: rotateY(90deg) translateX(4vmin);
@@ -82,7 +96,7 @@ body {
   transform: rotateX(-90deg) translateY(-4vmin);
   transform-origin: top;
 }
-#top {
+#bottom {
   transform: rotateX(90deg) translateY(4vmin);
   transform-origin: bottom;
 }
@@ -94,10 +108,10 @@ body {
 
 .players {
   position: absolute;
-  top: 91vmin;
-  left: 3vmin;
-  height: 4vmin;
-  width: 4vmin;
+  top: 89vmin;
+  left: 1vmin;
+  height: 8vmin;
+  width: 8vmin;
   border-radius: 50%;
   opacity: 0.7;
   transition-duration: 0.4s;
@@ -105,7 +119,7 @@ body {
 }
 
 .players#red {
-  background-color: red;
+  background-color: transparent;
 }
 
 .model {
@@ -146,4 +160,36 @@ body {
   bottom: 0;
   right: 0;
   text-align: center;
+}
+
+.categories {
+  text-align: center;
+}
+
+.category {
+  width: 100%;
+  text-align: center;
+  background-color: #ccc;
+  border: none;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  #side {
+    display: grid;
+    grid-template-columns: 100%;
+    width: 98%;
+    box-sizing: border-box;
+    background-color: transparent;
+  }
+
+  #main {
+    top: 80px;
+  }
+
+  .dice-section {
+    height: 14vmin;
+    background-color: transparent;
+  }
 }

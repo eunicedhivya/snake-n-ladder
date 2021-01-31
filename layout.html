@@ -5,14 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://demo.thefederal.in/embed/budget2021/snake-n-ladder/style.css"> -->
 </head>
 <body>
     <div class="model" style="display: none;">
         <button id="closeBtn">X</button>
-        <div id="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempus dolor sed tortor accumsan, a scelerisque massa faucibus.</div>
+        <div id="message">
+            <h1 class="modal-headline"></h1>
+            <p class="modal-desc"></p>
+            <a href="#" class="modal-link" target="_blank">Click to read</a>
+        </div>
     </div>
     <div id="main">
-        <div class="players" id="red"></div>
+        <div class="players" id="red">
+            <img class="defaulticon" src="https://demo.thefederal.in/embed/budget2021/snake-n-ladder/img/person.svg" style="display:block;">
+            <img class="farmer" src="https://demo.thefederal.in/embed/budget2021/snake-n-ladder/img/farmer.svg" style="display:none;">
+            <img class="couple" src="https://demo.thefederal.in/embed/budget2021/snake-n-ladder/img/couple.svg" style="display:none;">
+            <img class="retired" src="https://demo.thefederal.in/embed/budget2021/snake-n-ladder/img/retired.svg" style="display:none;">
+            <img class="business" src="https://demo.thefederal.in/embed/budget2021/snake-n-ladder/img/business.svg" style="display:none;">
+        </div>
         <div class="tile"></div>
         <div class="tile"></div>
         <div class="tile"></div>
@@ -117,18 +128,52 @@
 
     <div id="side">
         <!-- <p id="p_turn">Red Players Turn</p> -->
-        <p id="dicenumber">1</p>
-        <div id="cube_outer">
-            <div id="cube_inner">
-                <div id="front"><img src="1.png" alt=""></div>
-                <div id="back"><img src="2.png" alt=""></div>
-                <div id="left"><img src="3.png" alt=""></div>
-                <div id="right"><img src="4.png" alt=""></div>
-                <div id="top"><img src="5.png" alt=""></div>
-                <div id="bottom"><img src="6.png" alt=""></div>
+        <section class="dice-section">
+            <p id="dicenumber" style="display: none;">1</p>
+            <div id="cube_outer">
+                <div id="cube_inner">
+                    <div id="front"><img src="https://demo.thefederal.in/embed/budget2021/snake-n-ladder/1.png" alt=""></div>
+                    <div id="back"><img src="https://demo.thefederal.in/embed/budget2021/snake-n-ladder/2.png" alt=""></div>
+                    <div id="left"><img src="https://demo.thefederal.in/embed/budget2021/snake-n-ladder/3.png" alt=""></div>
+                    <div id="right"><img src="https://demo.thefederal.in/embed/budget2021/snake-n-ladder/4.png" alt=""></div>
+                    <div id="top"><img src="https://demo.thefederal.in/embed/budget2021/snake-n-ladder/5.png" alt=""></div>
+                    <div id="bottom"><img src="https://demo.thefederal.in/embed/budget2021/snake-n-ladder/6.png" alt=""></div>
+                </div>
             </div>
-        </div>
+        </section>
+        <!-- <div class="selectedCategory">
+
+        </div> -->
+       <div class="categories">
+                <button id="rolldice">Roll Dice</button>
+                <button id="resetGame">Reset Game</button>
+                <!--  <button class="category" id="sm">SM</button>
+                <button class="category" id="couple">Middle Class Couple</button>
+                <button class="category" id="retired">Retired Individual</button>
+                <button class="category" id="farmer">Farmer</button>
+                <button class="category" id="business">Business Man</button>-->
+                
+        </div> 
     </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="data.js"></script>
     <script src="main.js"></script>
+    <!-- <script src="https://demo.thefederal.in/embed/budget2021/snake-n-ladder/main.js"></script> -->
+    <script>
+        // window.onclick = e => {
+        //     console.log(e.target);  // to get the element
+        //     console.log(e.target.tagName);  // to get the element tag name alone
+        //     console.log(e.target.innerText);  // to get the element tag name alone
+        //     myInputElement = e.target;
+        //     myInputElement[0].select();
+        //     document.execCommand('Copy');
+            
+        // } 
+
+        // from = [[29.4, 0], [88.2,0], [29.4, -9.8], [0, -19.6], [9.8, -19.6], [49, -19.6],
+        //         [78.4, -29.4] ]
+        // tos = [[39.2, -9.8], [49, 0], [9.8, -29.4], [0, -49], [19.6, -9.8], [49, -29.4],
+        //        [68.6, -39.2],  ]
+    </script>
 </body>
 </html>

@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <style>
+        body { background:none!Important;}
+        
+        #container {height:937px; width:1000px; margin:0; padding:0; overflow:hidden; position:relative; background:url(http://media2.intoday.in/microsites/specials/budget/Game-BG.jpg) no-repeat left top;}
+        #container ul {border: 0 solid red;float: left;margin: 9px 10px 10px 72px;padding: 0;position: relative;width: 917px;}
+        #container ul li { text-align:center;border: 0px solid #000000;float: left;list-style: none outside none;margin: 0;padding: 0;font:normal 14px/18px roboto, Arial; position:relative; width:12.5%; height:115px; opacity:0;filter:alpha(opacity:0);}
+        .box1 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/1.jpg) no-repeat left top; }
+        .box1 div{line-height: 14px;margin: 55px 0 0 1px;width: 100%;}
+        .box2 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/2.jpg) no-repeat left top;}
+        .box2 div{color: #FFFFFF;margin: 20px 0 0 5px;width: 87%;}
+        .box3 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/3.jpg) no-repeat left top;}
+        .box3 div{line-height: 12px;margin: 65px 0 0;width: 100%;}
+        .box4 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/2.jpg) no-repeat left top;}
+        .box4 div{color: #FFFFFF;margin: 30px 0 0;}
+        .box5 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/5.jpg) no-repeat left top;}
+        .box5 div{margin: 30px 0 0;}
+        .box6 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/6.jpg) no-repeat left top;}
+        .box6 div {color: #fff;padding: 16px 7px;width: 87%;}
+        .box7 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/7.jpg) no-repeat left top;}
+        .box7 div{line-height: 14px;margin: 58px 0 0;width: 97%;}
+        .box8 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/8.jpg) no-repeat left top;}
+        .box8 div{ color: #FFFFFF;margin: 20px 0 0;}
+        .box9 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/9.jpg) no-repeat left top;}
+        .box9 div{font-weight: bold;margin: 10px 0 0 5px;width: 90%;}
+        .box10 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/10.jpg) no-repeat left top;}
+        .box10 div{ padding:20px 5px;}
+        .box11 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/11.jpg) no-repeat left top;}
+        .box11 div{margin: 60px 0 0 5px;width:90%;}
+        .box12 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/12.jpg) no-repeat left top;}
+        .box12 div{}
+        .box13 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/13.jpg) no-repeat left top;}
+        .box13 div{}
+        .box14 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/14.jpg) no-repeat left top;}
+        .box14 div {line-height: 19px; margin: 43px 0 0;padding: 0 5px; width: 89%;}
+        .box15 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/15.jpg) no-repeat left top;}
+        .box15 div {line-height: 14px; margin: 73px 0 0 4px;  width: 90%;}
+        .box16 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/16.jpg) no-repeat left top;}
+        .box16 div { line-height: 19px; margin: 41px 0 0 10px;  width: 81%;}
+        .box17 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/17.jpg) no-repeat left top;}
+        .box17 div{}
+        .box18 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/18.jpg) no-repeat left top;}
+        .box18 div{}
+        .box19 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/19.jpg) no-repeat left top;}
+        .box19 div{ padding:20px 0 0 0 }
+        .box20 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/20.jpg) no-repeat left top;}
+        .box20 div{}
+        .box21 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/21.jpg) no-repeat left top;}
+        .box21 div{margin: 33px 0 0 7px;width: 100%;}
+        .box22 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/22.jpg) no-repeat left top;}
+        .box22 div{}
+        .box23 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/23.jpg) no-repeat left top;}
+        .box23 div{margin: 20px 0 0;width: 95%;}
+        .box24 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/24.jpg) no-repeat left top;}
+        .box24 div{color: #FFFFFF;line-height: 15px;margin: 24px 0 0;width: 98%;}
+        .box25 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/25.jpg) no-repeat left top;}
+        .box25 div{}
+        .box26 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/26.jpg) no-repeat left top;}
+        .box26 div{}
+        .box27 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/27.jpg) no-repeat left top;}
+        .box27 div{margin: 23px 0 0;width: 97%;}
+        .box28 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/28.jpg) no-repeat left top;}
+        .box28 div{margin: 25px 0 0 20px;width: 64%;}
+        .box29 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/29.jpg) no-repeat left top;}
+        .box29 div {    margin: 14px 0 0 5px;    width: 88%;}
+        .box30 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/30.jpg) no-repeat left top;}
+        .box30 div{margin: 28px 0 0 10px;width: 91%;}
+        .box31 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/31.jpg) no-repeat left top;}
+        .box31 div { margin: 22px 0 0 10px; width: 82%;}
+        .box32 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/32.jpg) no-repeat left top;}
+        .box32 div {    margin: 35px 0 0 10px;    width: 82%;}
+        .box33 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/33.jpg) no-repeat left top;}
+        .box33 div{font-size: 11px;margin: 32px 0 0;width: 100%;}
+        .box34 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/34.jpg) no-repeat left top;}
+        .box34 div{}
+        .box35 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/35.jpg) no-repeat left top;}
+        .box35 div {margin: 26px 0 0 32px; width: 62%;}
+        .box36 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/36.jpg) no-repeat left top;}
+        .box36 div{color: #FFFFFF; margin: 25px 0 0 10px;width: 81%;margin-top:18px\9;}
+        .box37 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/37.jpg) no-repeat left top;}
+        .box37 div{}
+        .box38 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/38.jpg) no-repeat left top;}
+        .box38 div{color: #FFFFFF;margin: 38px 0 0 10px;width: 75%;}
+        .box39 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/39.jpg) no-repeat left top;}
+        .box39 div { margin: 43px 0 0 10px; width: 81%;}
+        .box40 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/40.jpg) no-repeat left top;}
+        .box40 div {color: #ffffff; margin: 17px 0 0 8px; width: 87%;}
+        .box41 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/41.jpg) no-repeat left top;}
+        .box41 div{}
+        .box42 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/42.jpg) no-repeat left top;}
+        .box42 div {margin: 21px 0 0;}
+        .box43 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/43.jpg) no-repeat left top;}
+        .box43 div{margin: 25px 0 0;width: 100%;}
+        .box44 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/44.jpg) no-repeat left top;}
+        .box44 div{ margin: 12px 0 0 22px; width: 75%;}
+        .box45 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/45.jpg) no-repeat left top;}
+        .box45 div{}
+        .box46 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/46.jpg) no-repeat left top;}
+        .box46 div{margin: 28px 0 0 22px;width: 75%;}
+        .box47 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/47.jpg) no-repeat left top;}
+        .box47 div { margin: 28px 17px;}
+        .box48 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/48.jpg) no-repeat left top;}
+        .box48 div{  margin: 30px 0 0 10px;width: 82%;}
+        .box49 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/49.jpg) no-repeat left top;}
+        .box49 div{ margin-top: 60px;}
+        .box50 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/50.jpg) no-repeat left top;}
+        .box50 div{}
+        .box51 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/51.jpg) no-repeat left top;}
+        .box51 div{}
+        .box52 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/52.jpg) no-repeat left top;}
+        .box52 div{ color:#fff; padding: 25px 16px;  width: 75%;}
+        .box53 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/53.jpg) no-repeat left top;}
+        .box53 div{margin: 18px 0 0 10px;width: 80%;}
+        .box54 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/54.jpg) no-repeat left top;}
+        .box54 div{color: #FFFFFF;margin: 20px 0 0 4px;width: 94%;}
+        .box55 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/55.jpg) no-repeat 0px top;}
+        .box55 div{width: 88%; margin:40px 0 0 5px;}
+        .box56 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/56.jpg) no-repeat left top;}
+        .box56 div{color: #FFFFFF;margin: 17px 0 0 7px;width: 87%;}
+        .box57 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/57.jpg) no-repeat left 1px;}
+        .box57 div{width: 94%;margin: 13px 0 0;}
+        .box58 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/58.jpg) no-repeat left top;position:relative; }
+        .box58 div{  margin-left: 13px; margin-top: 22px; width: 80%;}
+        .box59 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/59.jpg) no-repeat left top;}
+        .box59 div {margin:28px 0 0 5px; width:72%;}
+        .box60 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/60.jpg) no-repeat left top;}
+        .box60 div{}
+        .box61 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/61.jpg) no-repeat left top;}
+        .box61 div{padding: 10px 0 0 11px;    width: 79%}
+        .box62 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/62.jpg) no-repeat left top; width:115px; height:115px;}
+        .box62 div{ font-weight:bold; width:100%; text-align:center; margin-top:5px;}
+        .box63 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/63.jpg) no-repeat left top;}
+        .box63 div {margin: 35px 0 0 5px; text-align: left; width: 86%;}
+        .box63 div span { font-size:16px; text-transform:uppercase;}
+        .box64 { background:url(http://media2.intoday.in/microsites/specials/budget/2017/64.jpg) no-repeat -11px top;}
+        .box64 div{}
+        #proceed { display:none;  bottom: 40px;
+            font-size: 16px;
+            font-weight: bold;
+            left: 100px;
+            position: absolute;
+            text-align: center;
+            width: 65px;
+            text-decoration:blink}
+            
+        .logo-section {
+            width: 230px;
+            float: left;
+        }
+        .logo-section a, .logo-section h1 {
+            text-decoration: none;
+            border-bottom: 0px;
+            font-family: roboto;
+            color: #d7141c;
+            font-style: normal;
+            text-align: center;
+            margin: 0px;
+            font-size:30px;
+        }
+        .logo-section h1 span {
+            color: #2D3192;
+        }
+        
+        .wrapper {
+            width: 1002px;
+            margin: 0 auto;
+        }
+        
+        header#header {
+            /* background: url(http://media2.intoday.in/btmt/budget/2016/header-rptbg.gif) repeat-x 0 bottom !important; */
+            padding: 15px 0 25px;
+            height: auto;
+            width: 100% !important;
+        }
+        
+        nav#navigation {
+            padding: 7px 0 10px;
+            /* margin-bottom: 30px; */
+            background: url(http://media2.intoday.in/btmt/budget/2016/budget-nav-bg.jpg) repeat-x 0 0;
+        }
+        
+        .ipad_nvg {
+            display: none;
+        }
+        
+        nav ul, .callbacks ul, .disable-destroy ul, .show-hide ul, #sortable ul, .dialog ul, .all-themes-switch ul, .scrollTo ul {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        nav#navigation ul li {
+            width: auto;
+            display: inline-block;
+            margin-right: 66px;
+        }
+        
+        nav#navigation ul li.home_b a {
+            font: 400 19px/20px roboto;
+        }
+        
+        nav#navigation ul li a {
+            text-decoration: none;
+            color: #fff;
+            font: 400 15px/18px roboto;
+            text-transform: uppercase;
+        }
+        </style>
+</head>
+<body>
+    <div class="maincontainer">
+        <div id="wrapper">
+            <header>
+         
+    
+    <link href="http://fonts.googleapis.com/css?family=Roboto:700,500,400,900" rel="stylesheet" type="text/css">
+    <style>
+    
+    
+    body { margin:0; padding:0;}
+    
+    #global {
+    width: 100%;
+    height: 31px;
+    margin: 0 auto;
+    text-align: center;
+    background-color:#d8d8d8;
+    border-bottom: 0px solid #696d6e;
+    }
+    
+    #itgd_links{ width:990px; margin:0 auto;background-color: #d8d8d8 !important; padding:8px !important;}
+    
+    
+    #global #itgd_links .india {
+    /*background-color: #d71920;*/
+    color: #ffffff;
+    padding: 8px 11px;
+    margin-top: 0px;
+    }
+    
+    #itgd_links a {
+    color: #CDCDCD;
+    text-decoration: none;
+    }
+    
+    #header {
+    background: white !important;
+    height: 108px;
+    }
+    
+    .header{ width:1000px; margin:0 auto;}
+    
+    #logo {
+    float: left;
+    position: inherit;
+    width: 254px;
+    margin: 15px 5px 0 0px;
+    padding-left: 4px;
+    text-align: right;
+    }
+    
+    #ad {
+    float: left;
+    position: inherit;
+    width: 728px;
+    margin: 8px 0 0 0px;
+    padding-left: 5px;
+    text-align: center;
+    }
+    
+    
+    .bt-l {
+    margin-bottom: 24px;
+    }
+    .date {
+    margin-top: -5px;
+    }
+    .date {
+    color: #616161;
+    font: bold 12px arial;
+    line-height: 18px;
+    width: 230px;
+    float: right;
+    text-align: right;
+    font-style: italic;
+    }
+    
+    .union-budget-title {
+    width: 100%;
+    height: 87px;
+    margin: auto;
+    }
+    .union-budget-title-inner {
+    width: 1000px;
+    margin: auto;
+    padding-top: 20px;
+    }
+    
+    .union-budget-title-inner h2 {
+    font-style: normal;
+    color: #7c7c7c;
+    font-size: 50px;
+    text-align: center;
+    }
+    
+    #union-budget-chunk {
+    background: #778c85;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    }
+    
+    
+    .budget-nav {
+    width: 1000px;
+    background: #778c85;
+    height: 30px;
+    margin: auto;
+    }
+    
+    .budget-nav ul{margin:0; padding:0; float:left; margin-left:-10px;}
+    
+    .budget-nav ul li {
+    float: left;
+    margin-left: 16px;
+    list-style:none;
+    }
+    
+    .budget-nav a {
+    color: white;
+    font-size: 18px;
+    line-height: 30px;
+    text-transform:uppercase;
+    text-decoration:none;
+    }
+    
+    .budget-nav a:hover {
+    text-decoration:none;
+    color:#FFF;
+    }
+    
+    
+    #global #itgd_links .india a {
+    color: #7a7a7a;
+    text-decoration: none;
+    margin: 0 0px;
+    }
+    
+    #global #itgd_links a {
+    border: 0px solid #000;
+    font: bold 11px arial;
+    color: #7a7a7a;
+    text-decoration: none;
+    margin: 0 1.1em;
+    }
+    
+    
+    .centerdiv {
+        margin: 0 auto;
+        padding: 13px 0;
+        width: 1000px;
+    }
+    </style>
+    <script>
+    $(document).ready(function(){
+        $("#scrolldown").click(function(){
+             $('html,body').animate({'scrollTop' : 1000},1000);
+            })
+        })
+    
+    </script>
+    
+            </header>
+          
+            
+    <section style="padding-top:1px;" class="clear">
+        <h3 style="margin: 10px 0px;font: 18px/22px arial;">Snakes &amp; Ladders is a game of steep jumps, sudden falls and, of course, chance. Managing your finances isn’t very different. Sometimes there are wads of cash in your wallet, and other times you are broke. The government does its fair bit to contribute or dent your purse through its Budget plans. Roll the dice here and see what came your way, and what didn’t.</h3>
+        <p><strong style="font: bold 20px/22px arial;">Click on <span style="color:#cc0000; cursor:pointer" id="scrolldown">Start</span> at the bottom left hand corner of the page to begin.</strong></p>
+        <div class="frm-share rght">
+        
+            <div class="socialcont">
+                         <div class="socialdiv">
+                            <!--<a rel="nofollow" target="_new" title="Email" onClick="javascript:window.open('http://specials.intoday.in/snakes-and-ladders/content_mail-eng.php?email=0&amp;URL=http://specials.intoday.in/modi-last-stretch/','window','status=no,resize=no,toolbar=no,scrollbars=no,width=478,height=390'); event.returnValue=false; return false;" href="javascript:void('0');"><span class="imgs email lft"></span></a>-->
+        
+                            <a rel="nofollow" target="_new" title="Facebook" href="http://www.facebook.com/sharer/sharer.php?p[url]=http%3A%2F%2Fspecials.intoday.in%2Fsnakes-and-ladders%2F&amp;p[title]=As Finance Minister Jaitley gets ready to announce the Union Budget 2014, here’s a fun snakes and ladders on taxes, finance and budget sops.&amp;s=100&amp;p[summary]=As Finance Minister Jaitley gets ready to announce the Union Budget 2014, here’s a fun snakes and ladders on taxes, finance and budget sops.&amp;p[images][0]=http://media2.intoday.in/microsites/specials/budget/Snake-FB-250x250.jpg"><span class="imgs fb lft"></span></a>
+                            <a rel="nofollow" target="_new" title="Twitter" href="http://twitter.com/?status=Here’s a fun snakes and ladders on taxes, finance and budget sops.%20http%3A%2F%2Fspecials.intoday.in%2Fsnakes-and-ladders%2F%20via%20%40indiatoday"><span class="imgs tw lft"></span></a>
+                        </div>
+                      </div>
+                      
+        </div>
+    
+    <div id="container">
+        
+        <div id="seeall" style="height:30px; width:58px; font-weight:bold; color:#cc0000; left:0px; background:none;opacity:1!important; text-align:right; position:absolute; z-index:99999;"><img src="http://media2.intoday.in/microsites/specials/snake/See-complete-graphic.jpg" width="60" height="41"></div>
+        <div id="resetall" style=" display:none;height:18px; position:absolute; z-index:99999; width:58px; font-weight:bold; color:#fff; left:0px; background:#07761A;opacity:1!important; text-align:center;">RESET</div>
+        
+          <ul class="licontain">
+            <li class="box64"><div></div></li>
+            <li class="box63"><!--<div align="center">You lose <br /> your job</div> --></li>
+            <li class="box62"><div align="center"></div></li>
+            <li class="box61"><!--<div>Pay more now  to get life insurance</div> --></li>
+            <li class="box60"><div></div></li>
+            <li class="box59"><!--<div>Electricity bill gives you a shock</div> --></li>
+            <li class="box58"><!--<div>You are brokey</div> --></li>
+            <li class="box57"><div></div></li>
+            
+            <li class="box49"><div></div></li>
+            <li class="box50"><div></div></li>
+            <li class="box51"><div></div></li>
+            <li class="box52"><!--<div>Fuel is costlier for you now</div> --></li>
+            <li class="box53"><div></div></li>
+            <li class="box54"><!--<div>You have been fined for travelling without ticket</div> --></li>
+            <li class="box55"><!--<div>Your income is tax-free now</div> --></li>
+            <li class="box56"><!--<div>18% rise in excise duty on cigarettes, cigars and cheerots</div> --></li>
+            
+            
+            <li class="box48"><!--<div>You have won free air travel to anywhere in India</div> --></li>
+            <li class="box47"><!--<div>ICDS gets Rs. 17,700 crore</div> --></li>
+            <li class="box46"><!--<div>Your servant just bought a Ferrari</div> --></li>
+            <li class="box45"><div></div></li>
+            <li class="box44"><!--<div>The mobile phone you wanted to buy is costlier</div> --></li>
+            <li class="box43"><div></div></li>
+            <li class="box42"><!--<div>Your car broke down, needs Rs 40,000</div> --></li>
+            <li class="box41"><div></div></li>
+            
+            <li class="box33"><div></div></li>
+            <li class="box34"><div></div></li>
+            <li class="box35"><!--<div>Your taxes have gone up</div> --></li>
+            <li class="box36"><!--<div> College education for your kids is now free</div> --></li>
+            <li class="box37"><div></div></li>
+            <li class="box38"><!--<div>You have become 'super-rich'</div> --></li>
+            <li class="box39"><!--<div>Service tax on all A/C restaurants</div> --></li>
+            <li class="box40"><!--<div>Tax credit of Rs. 2,000 for income upto Rs. 5 lakh</div> --></li>
+            
+            <li class="box32"><!--<div>A new car awaits you in your driveway</div> --></li>
+            <li class="box31"><!--<div>Rs 532 crore to make post offices part of core banking</div> --></li>
+            <li class="box30"><div></div></li>
+            <li class="box29"><!--<div>Your kids' school fees have shot up</div> --></li>
+            <li class="box28"><!--<div>Royalty tax hiked from 10% to 25%</div> --></li>
+            <li class="box27"><!--<div>Regulatory authority to be  set up for road sector</div> --></li>
+            <li class="box26"><div></div></li>
+            <li class="box25"><div></div></li>
+            
+            <li class="box17"><div></div></li>
+            <li class="box18"><div></div></li>
+            <li class="box19"><!--<div>Rs. 2 trillion for defence sector</div> --></li>
+            <li class="box20"><div></div></li>
+            <li class="box21"><!--<div> Rs 5,000 crore budgeted for agriculture R&D </div> --></li>
+            <li class="box22"><div></div></li>
+            <li class="box23"><!--<div>No change in peak custom, excise rates</div> --></li>
+            <li class="box24"><!--<div>Promise to women, youth and senior citizens</div> --></li>
+            
+            <li class="box16"><!--<div>You’ve got a 200% salary hike</div> --></li>
+            <li class="box15"><!--<div>Your car loan is paid off</div> --></li>
+            <li class="box14"><!--<div>Rs 1,000 crore goes to charity</div> --></li>
+            <li class="box13"><div></div></li>
+            <li class="box12"><!--<div>Collect your railway pass for  free travel anywhere in the country for two years</div> --></li>
+            <li class="box11"><div></div> </li>
+            <li class="box10"><!--<div>289 more cities to get private radio FM stations</div> --></li>
+            <li class="box9"><div></div></li>
+            
+            <li class="box1"><div></div></li>
+            <li class="box2"><!--<div>All your grocery purchase are free for the next year</div> --></li>
+            <li class="box3"><div></div></li>
+            <li class="box4"><!--<div>Your home loan is paid off</div> --></li>
+            <li class="box5"><div></div></li>
+            <li class="box6"><!--<div>You get shopping vouchers worth Rs 12 lakh</div> --></li>
+            <li class="box7"><div></div></li>
+            <li class="box8"><!--<div>The government waives off duty on your Ferrari</div> --></li>
+        </ul>
+        
+        
+           <!-- <div id="proceed">Click here to proceed</div>-->
+        <div id="c1" scrl="Arrow-right.png" class="clickbox"><div class="next_c"><img src="http://specials.indiatoday.com/budget-game/Arrow-right.png" border="0"></div></div>
+        <div id="c2" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c3" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c4" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c5" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c6" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c7" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c8" scrl="Arrow-up.png" class="clickbox"></div>
+        
+        <div id="c9" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c10" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c11" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c12" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c13" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c14" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c15" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c16" scrl="Arrow-up.png" class="clickbox"></div>
+        
+        <div id="c17" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c18" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c19" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c20" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c21" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c22" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c23" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c24" scrl="Arrow-up.png" class="clickbox"></div>
+        
+        <div id="c25" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c26" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c27" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c28" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c29" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c30" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c31" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c32" scrl="Arrow-up.png" class="clickbox"></div>
+        
+        
+        <div id="c33" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c34" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c35" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c36" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c37" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c38" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c39" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c40" scrl="Arrow-up.png" class="clickbox"></div>
+        
+        <div id="c41" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c42" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c43" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c44" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c45" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c46" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c47" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c48" scrl="Arrow-up.png" class="clickbox"></div>
+        
+        <div id="c49" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c50" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c51" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c52" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c53" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c54" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c55" scrl="Arrow-right.png" class="clickbox"></div>
+        <div id="c56" scrl="Arrow-up.png" class="clickbox"></div>
+        
+        <div id="c57" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c58" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c59" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c60" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c61" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c62" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c63" scrl="Arrow-left.png" class="clickbox"></div>
+        <div id="c64" scrl="Arrow-left.png" class="clickbox"></div>
+        
+        
+        <div id="start-click" class="clickbox" style="height:30px; width:58px; font-weight:bold; color:#cc0000; bottom:10px; left:0px; background:none;opacity:1!important;filter:alpha(opacity=100); text-align:right;"><img src="http://media2.intoday.in/microsites/specials/snake/Start-button_2.gif" width="60" height="41"></div>
+        <style>
+            .clickbox{ width:115px; height:115px; position:absolute; z-index:99999999; background-color:none; opacity:1; filter:alpha(opacity:100); cursor:pointer;}
+            #c1{ bottom:9px; left:72px;}
+            #c2{ bottom:9px; left:187px;}
+            #c3{ bottom:9px; left:301px;}
+            #c4{ bottom:9px; left:416px;}
+            #c5{ bottom:9px; left:531px;}
+            #c6{ bottom:9px; left:646px;}
+            #c7{ bottom:9px; left:761px;}
+            #c8{ bottom:9px; left:876px;}
+            
+            #c9{ bottom:124px; left:876px;}
+            #c10{ bottom:124px; left:761px;}
+            #c11{ bottom:124px; left:646px;}
+            #c12{ bottom:124px; left:531px;}
+            #c13{ bottom:124px; left:416px;}
+            #c14{ bottom:124px; left:301px;}
+            #c15{ bottom:124px; left:187px;}
+            #c16{ bottom:124px; left:72px;}
+            
+            #c17{ bottom:239px; left:72px;}
+            #c18{ bottom:239px; left:187px;}
+            #c19{ bottom:239px; left:301px;}
+            #c20{ bottom:239px; left:416px;}
+            #c21{ bottom:239px; left:531px;}
+            #c22{ bottom:239px; left:646px;}
+            #c23{ bottom:239px; left:761px;}
+            #c24{ bottom:239px; left:876px;}
+            
+            #c25{ bottom:354px; left:876px;}
+            #c26{ bottom:354px; left:761px;}
+            #c27{ bottom:354px; left:646px;}
+            #c28{ bottom:354px; left:531px;}
+            #c29{ bottom:354px; left:416px;}
+            #c30{ bottom:354px; left:301px;}
+            #c31{ bottom:354px; left:187px;}
+            #c32{ bottom:354px; left:72px;}
+            
+            
+            
+            #c33{ top:354px; left:72px;}
+            #c34{ top:354px; left:187px;}
+            #c35{ top:354px; left:301px;}
+            #c36{ top:354px; left:416px;}
+            #c37{ top:354px; left:531px;}
+            #c38{ top:354px; left:646px;}
+            #c39{ top:354px; left:761px;}
+            #c40{ top:354px; left:876px;}
+            
+            #c41{ top:239px; left:876px;}
+            #c42{ top:239px; left:761px;}
+            #c43{ top:239px; left:646px;}
+            #c44{ top:239px; left:531px;}
+            #c45{ top:239px; left:416px;}
+            #c46{ top:239px; left:301px;}
+            #c47{ top:239px; left:187px;}
+            #c48{ top:239px; left:72px;}
+            
+            #c49{ top:124px; left:72px;}
+            #c50{ top:124px; left:187px;}
+            #c51{ top:124px; left:301px;}
+            #c52{ top:124px; left:416px;}
+            #c53{ top:124px; left:531px;}
+            #c54{ top:124px; left:646px;}
+            #c55{ top:124px; left:761px;}
+            #c56{ top:124px; left:876px;}
+            
+            #c57{ top:9px; left:876px;}
+            #c58{ top:9px; left:761px;}
+            #c59{ top:9px; left:646px;}
+            #c60{ top:9px; left:531px;}
+            #c61{ top:9px; left:416px;}
+            #c62{ top:9px; left:301px;}
+            #c63{ top:9px; left:187px;}
+            #c64{ top:9px; left:72px;}
+        </style>
+    </div>
+    
+    
+    
+    <div>
+     
+          <div style="clear:both"></div>
+          <div style="text-align:left; font:bold 14px/18px arial;">
+              <p>Rules of the game:</p>
+            <ol><li>
+    Ladders represent  career defining successes, moments of glory</li><li>
+    
+    Snakes represent moments of infamy or missteps</li><li>
+    
+    The last five squares are yet to be played</li></ol>
+    
+          </div>
+         <div style="clear:both"></div>
+          <div style="text-align:center; display:none;">
+    <!--		<iframe src="http://indiatoday.intoday.in/commentbox/comment_box.jsp?sId=280205&ScfUrl=&StoryTitle=The Last Stretch: Modi Rolls For Race Course&message=&website=special&content_type=poll&storytemplate=site" frameborder="0" scrolling="auto" width="750" height="2000"></iframe>-->
+         </div>
+             </div>
+    </section> 
+            
+    <div class="fotborder">
+      <footer> 
+        
+    <script>
+    var current = 1;
+    $(document).ready(function(e) {
+        var current = 1;
+        $('#seeall').click(function(){
+            $('.next_c').remove();
+            $("#seeall").css('display', 'none');
+            $("#resetall").css('display', 'block');
+            for(i=1;i<=64;i++) {
+                $('.box'+i).animate({opacity:+1},2000);
+            }
+            current = 64;
+        });
+        
+        $("#resetall").click(function(){
+            var arrowimg = '<div class="next_c" style="z-index: 1; left: 7px;"><img border="0" src="http://specials.indiatoday.com/budget-game/Arrow-right.png"></div>';
+            $('#c1').append(arrowimg);
+            $('.licontain li').animate({opacity:-1},2000);
+            
+            current = 1;
+            //setCookie('clicked','0',1);
+            $("#seeall").css('display', 'block');
+            $("#resetall").css('display', 'none');
+        });
+        
+        jQuery.fn.shake = function() {
+            this.each(function(i) {
+                $(this).css({ "position" : "relative" });
+                for (var x = 1; x <= 3; x++) {
+                    $(this).animate({ left: -5 }, 10).animate({ left: 0 }, 50).animate({ left: 5 }, 10).animate({ left: 0 }, 50);
+                }
+            });
+            return this;
+        }
+    /*	
+    $("#c6, #c8a, #c12, #c16, #c17, #c18").click(function() {
+        $("#container").shake();
+    });*/
+    
+        var img_right = 'Arrow-right.png';
+        var img_left = 'Arrow-left.png';
+        var img_right = 'Arrow-up.png';
+        //'22','58',
+        var snakess = ['27','29','44','61','63'];
+        var fallDown = new Array();
+        fallDown['27'] = 22;
+        fallDown['29'] = 20;
+        fallDown['44'] = 37;
+        fallDown['59'] = 58;
+        fallDown['61'] = 51;
+        fallDown['63'] = 30	;
+        
+        
+        var ladders = ['16','24','32','38','48','55'];
+        var goUp = new Array();
+        goUp['16'] = 4;
+        goUp['24'] = 2;
+        goUp['32'] = 2;
+        goUp['38'] = 3;
+        goUp['48'] = 2;
+        goUp['55'] = 2;
+        
+    /*	, #start-click, .next_c
+    */	
+        $(".clickbox").on('click', function(){
+            var r_number = Math.floor((Math.random() * 6) + 1);
+
+            console.log(r_number)
+
+            if(current==1){current=0}
+            //r_number = 63;
+            var maxlimit = current+r_number;
+            $('.next_c').remove();
+            if(fallDown[maxlimit]!=null && fallDown[maxlimit]!=undefined) {
+                for (i = current; i<=maxlimit; i++) {
+                    var tyuioi='box'+i;
+                    //alert(tyuioi)
+                    $('.'+tyuioi).animate({opacity:+1},1000);
+                }
+                
+                $(this).html('');
+                current = current+r_number ;
+                $("#container").shake();
+    
+                setTimeout(function(){
+                    maxlimit = fallDown[maxlimit];
+                    //alert(current+maxlimit )
+                    for (i = current; i>=maxlimit; i--) {
+                        var tyuioi='box'+i;
+                        //alert(tyuioi)
+                        $('.'+tyuioi).animate({opacity:-1},1000);//.css('opacity',"0");
+                    }
+                    
+                    current = maxlimit-1 ;
+                    var toadd = 'c'+(current+1);
+                    var arrowimg = '<div class="next_c" style="z-index: 1; left: 7px;"><img border="0" src="http://specials.indiatoday.com/budget-game/'+$('#c'+(current+1)).attr('scrl')+'"></div>';
+                    $('#'+toadd).append(arrowimg);
+                },1000);
+            } else if(goUp[maxlimit]!=null && goUp[maxlimit]!=undefined) {
+                for (i = current; i<=maxlimit; i++) {
+                    var tyuioi='box'+i;
+                    //alert(tyuioi)
+                    $('.'+tyuioi).animate({opacity:+1},1000);
+                }
+                $(this).html('');
+                current = current+r_number ;
+                r_number = maxlimit + goUp[maxlimit];
+                maxlimit = r_number;
+                setTimeout(function(){
+                    for (i = current; i<=maxlimit; i++) {
+                        var tyuioi='box'+i;
+                        //alert(tyuioi)
+                        $('.'+tyuioi).animate({opacity:+1},1000);
+                    }
+                    $(this).html('');
+                    current = maxlimit;
+                    var toadd = 'c'+(current+1);
+                    var arrowimg = '<div class="next_c" style="z-index: 1; left: 7px;"><img border="0" src="http://specials.indiatoday.com/budget-game/'+$('#c'+(current+1)).attr('scrl')+'"></div>';
+                    $('#'+toadd).append(arrowimg);
+                },1000);
+            } else {
+                for (i = current; i<=maxlimit; i++) {
+                    var tyuioi='box'+i;
+                    //alert(tyuioi)
+                    $('.'+tyuioi).animate({opacity:+1},1000);
+                }
+                $(this).html('');
+                current = current+r_number ;
+                var toadd = 'c'+(current+1);
+                var arrowimg = '<div class="next_c" style="z-index: 1; left: 7px;"><img border="0" src="http://specials.indiatoday.com/budget-game/'+$('#c'+(current+1)).attr('scrl')+'"></div>';
+                $('#'+toadd).append(arrowimg);
+            }
+        });
+        
+        
+    });
+    
+    </script>
+    <style>
+    .next_c { padding:10px; font-size:16px; font-weight:bold; text-decoration:blink; position:absolute; bottom:40px; display:block; text-align:center; width:80px; line-height:20px;}
+    </style>
+    
+    <script>
+    function jspopup(idname){
+        document.getElementById("phone-popup-larg").style.display="none";
+        document.getElementById("sms-popup-larg").style.display="none";
+        document.getElementById(idname).style.display="block";
+    }
+    function closejspopup(idname){
+        document.getElementById(idname).style.display="none";
+    }
+    </script>
+    
+    <div style="clear:both"></div>
+    
+    
+    
+    
+    <div style="text-align:center;margin-top:5px;">
+    
+                
+    </div>
+    </footer></div>    
+    </div></div>
+</body>
+</html>

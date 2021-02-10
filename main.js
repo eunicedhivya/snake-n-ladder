@@ -2,7 +2,8 @@ let stopEvent = false;
 document.querySelector('#red').style.marginLeft = '0vmin';
 document.querySelector('#red').style.marginTop = '0vmin';
 
-
+let rollPos = [0, 3, 1, 17]
+let myIndex = 0;
 
 boxNumbers();
 
@@ -28,20 +29,13 @@ document.getElementById("closeBtn").addEventListener("click", function() {
 
 
 document.getElementById("rolldice").addEventListener("click", async(e)=>{
-    // console.log(event.keyCode);
-    // let rollpos = [16, 9]
-    // let myIndex = 0;
-    // console.log(rollpos[myIndex]);
-    // myIndex = (myIndex+1)%(rollpos.length);
-    // console.log("trigger key")
-    let diceNum = await roll();
-        let isOutofRange =  checkRange(diceNum);
-        console.log(diceNum);
-        document.querySelector('#dicenumber').innerHTML = diceNum;
+    myIndex = (myIndex+1)%(rollPos.length);
+    console.log(rollPos[myIndex]);
+        let isOutofRange =  checkRange(rollPos[myIndex]);
+        document.querySelector('#dicenumber').innerHTML = rollPos[myIndex];
         await new Promise(resolve => setTimeout(resolve, 400))
         if(!isOutofRange){
-            await run(diceNum);
-            // await run(32);
+            await run(rollPos[myIndex]);
             await new Promise(resolve => setTimeout(resolve, 400))
         }
         stopEvent = false;
@@ -94,6 +88,7 @@ function checkLaddersAndSnakers(){
                 await new Promise(resolve => setTimeout(resolve, 400))
                 document.querySelector('.modal-headline').innerHTML = data[i]["headline"];
                 document.querySelector('.modal-desc').innerHTML = data[i]["bodytext"];
+                document.querySelector('.modal-img').src=data[i]["link"];
                 document.querySelector('.modal-link').href=data[i]["link"];
                 document.querySelector('.model').style.display = "block";
                 await new Promise(resolve => setTimeout(resolve, 400))

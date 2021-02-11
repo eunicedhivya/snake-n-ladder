@@ -1,11 +1,11 @@
 let stopEvent = false;
 document.querySelector('#red').style.marginLeft = '0vmin';
 document.querySelector('#red').style.marginTop = '0vmin';
-
-let rollPos = [0, 3, 1, 17]
+            ////[0, 4, 22, 21, 63, 56, 76, 68, 62] 
+let rollPos = [0, 3, 6, 3, 3, 18, 2, 25, 11]
 let myIndex = 0;
 
-boxNumbers();
+// boxNumbers();
 
 $(".category").on("click", function(d){
     console.log(d.target.id);
@@ -28,9 +28,22 @@ document.getElementById("closeBtn").addEventListener("click", function() {
 });
 
 
-document.getElementById("rolldice").addEventListener("click", async(e)=>{
+document.querySelector(".defaulticon").addEventListener("click", async(e)=>{
+    // myIndex = (myIndex+1)%(rollPos.length);
     myIndex = (myIndex+1)%(rollPos.length);
-    console.log(rollPos[myIndex]);
+    // console.log(rollPos[myIndex]);
+
+    console.log("predefinedPos", myIndex)
+    
+    if(myIndex === 0){
+        console.log("its done. Time to reset");
+        document.querySelector('#red').style.marginLeft = '0vmin';
+        document.querySelector('#red').style.marginTop = '0vmin';
+    }
+
+
+
+
         let isOutofRange =  checkRange(rollPos[myIndex]);
         document.querySelector('#dicenumber').innerHTML = rollPos[myIndex];
         await new Promise(resolve => setTimeout(resolve, 400))
@@ -40,6 +53,18 @@ document.getElementById("rolldice").addEventListener("click", async(e)=>{
         }
         stopEvent = false;
 })
+// document.getElementById("rolldice").addEventListener("click", async(e)=>{
+//     myIndex = (myIndex+1)%(rollPos.length);
+//     console.log(rollPos[myIndex]);
+//         let isOutofRange =  checkRange(rollPos[myIndex]);
+//         document.querySelector('#dicenumber').innerHTML = rollPos[myIndex];
+//         await new Promise(resolve => setTimeout(resolve, 400))
+//         if(!isOutofRange){
+//             await run(rollPos[myIndex]);
+//             await new Promise(resolve => setTimeout(resolve, 400))
+//         }
+//         stopEvent = false;
+// })
 
 // document.addEventListener("keydown", async(e)=>{
 //     // console.log(event.keyCode);
@@ -80,7 +105,7 @@ function run(diceNum){
 function checkLaddersAndSnakers(){
     return new Promise(async(resolve, reject)=>{
 
-        console.log(froms)
+        // console.log(froms)
         for(let i=0; i<tos.length; i++){
             if(marginLeft() == froms[i][0] && marginTop() == froms[i][1]){
                 document.querySelector('#red').style.marginLeft = `${tos[i][0]}vmin`;
@@ -138,22 +163,22 @@ function marginTop(){
     return Number(document.querySelector("#red").style.marginTop.split('v')[0])
 }
 
-function roll(){
-    return new Promise(async(resolve, reject)=>{
-        let rollpos = [3, 6, 4]
-        let myIndex = 0;
-        console.log(rollpos[myIndex]);
-        myIndex = (myIndex+1)%(rollpos.length);
-        let diceNumb = Math.floor(Math.random() * 6) + 1;
-        let values = [[0, -360], [-180, -360], [-180, 270], [-180, 90], [270, 180], [90, 90]]
-        // let values = [[0, -360], [-180, -360], [-180, 270], [0, 90], [270, 180], [90, 90]]
-        document.querySelector('#cube_inner').style.transform = `rotateX(360deg) rotateY(360deg)`;
-        await new Promise(resolve => setTimeout(resolve, 750))
-        document.querySelector('#cube_inner').style.transform = `rotateX(${values[diceNumb-1][0]}deg) rotateY(${values[diceNumb-1][1]}deg)`;
-        await new Promise(resolve => setTimeout(resolve, 750))
-        resolve(diceNumb);
-    })
-}
+// function roll(){
+//     return new Promise(async(resolve, reject)=>{
+//         let rollpos = [3, 6, 4]
+//         let myIndex = 0;
+//         console.log(rollpos[myIndex]);
+//         myIndex = (myIndex+1)%(rollpos.length);
+//         let diceNumb = Math.floor(Math.random() * 6) + 1;
+//         let values = [[0, -360], [-180, -360], [-180, 270], [-180, 90], [270, 180], [90, 90]]
+//         // let values = [[0, -360], [-180, -360], [-180, 270], [0, 90], [270, 180], [90, 90]]
+//         document.querySelector('#cube_inner').style.transform = `rotateX(360deg) rotateY(360deg)`;
+//         await new Promise(resolve => setTimeout(resolve, 750))
+//         document.querySelector('#cube_inner').style.transform = `rotateX(${values[diceNumb-1][0]}deg) rotateY(${values[diceNumb-1][1]}deg)`;
+//         await new Promise(resolve => setTimeout(resolve, 750))
+//         resolve(myIndex);
+//     })
+// }
 
 // Add Numbers to Tiles 
 function boxNumbers(){

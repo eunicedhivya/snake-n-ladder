@@ -29,7 +29,7 @@ body {
   float: left;
   height: 9.8vmin;
   width: 9.8vmin;
-  border: 0.1vmin solid black;
+  /* border: 0.1vmin solid black; */
   text-align: center;
   line-height: 9.8vmin;
   font-size: 10px;
@@ -43,17 +43,18 @@ body {
   position: absolute;
   top: 1vmin;
   left: 1vmin;
-  min-height: 25vmin;
+  min-height: 5vmin;
   width: 26vmin;
   border: 0.2vmin;
   background-color: #c6ad74;
   text-align: center;
   font-size: 3.5vmin;
   padding: 20px;
+  display: none;
 }
 
 .dice-section {
-  height: 25vmin;
+  height: 0vmin;
 }
 
 #cube_outer {

@@ -17,8 +17,7 @@ body {
 #main {
   position: absolute;
   margin: auto;
-  /* top: 0;
-  bottom: 0; */
+  top: -14%;
   left: 0;
   right: 0;
   border: 0.1vmin solid black;
@@ -245,6 +244,8 @@ body {
   font-weight: 300;
   line-height: 24px;
   letter-spacing: 0.01em;
+  margin: 0 auto 15px auto;
+  width: 80%;
 }
 #message a {
   font-size: 12px;
@@ -257,6 +258,8 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 8px;
+  width: 112px;
+  margin: 0 auto 0 auto;
 }
 
 .floating {
@@ -374,6 +377,7 @@ body {
     font-weight: 300;
     line-height: 20px;
     letter-spacing: 0.01em;
+    width: 95%;
   }
   #message a {
     font-size: 12px;

@@ -55,6 +55,7 @@ document.querySelector(".players").addEventListener("click", async(e)=>{
         document.querySelector('#red').style.marginLeft = '0vmin';
         document.querySelector('#red').style.marginTop = '0vmin';
         $('.options').css("opacity", "0")
+        $('.info-btn').css("opacity", "0")
     }
 
 
@@ -79,6 +80,7 @@ document.getElementById("rolldice").addEventListener("click", async(e)=>{
         document.querySelector('#red').style.marginLeft = '0vmin';
         document.querySelector('#red').style.marginTop = '0vmin';
         $('.options').css("opacity", "0")
+        $('.info-btn').css("opacity", "0")
     }
 
 
@@ -145,6 +147,8 @@ function checkLaddersAndSnakers(){
                 document.querySelector('.modal-img').src=data[i]["image"];
                 document.querySelector('.modal-link').href=data[i]["link"];
                 document.querySelector('.model').style.display = "block";
+                document.querySelector('.modal-img').style.display = "block";
+                document.querySelector('.modal-link').style.display = "block";
                 document.querySelector('.'+data[i]["snakeorladder"]+"-"+data[i]["startPosition"]).style.opacity = 1;
                 document.querySelector('#modal-'+data[i]["startPosition"]).style.opacity = 1;
                 await new Promise(resolve => setTimeout(resolve, 400))

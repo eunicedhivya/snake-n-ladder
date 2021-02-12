@@ -69,7 +69,7 @@ let data =    [
     "snakeorladder": "ladder",
     "headline": "COVID-19 relief raised expenditure to ₹34.50L Cr: Sitharaman",
     "bodytext": "The relief measures announced by the government to help the revival of businesses affected by COVID increased the expenditure to ₹34.50 lakh crore in the current fiscal from the ₹30.42 lakh crore budgeted",
-    "image": "https://thefederal.com/budget-2021/covid-19-relief-raised-expenditure-to-%E2%82%B934-50l-cr-sitharaman/",
+    "image": "https://thefederal.com/file/2021/02/5-696x459.jpg",
     "link": "https://thefederal.com/budget-2021/covid-19-relief-raised-expenditure-to-%E2%82%B934-50l-cr-sitharaman/"
   },
   {

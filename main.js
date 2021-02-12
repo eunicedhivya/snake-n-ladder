@@ -29,7 +29,7 @@ document.getElementById("closeBtn").addEventListener("click", function() {
 });
 
 
-document.querySelector(".defaulticon").addEventListener("click", async(e)=>{
+document.querySelector(".players").addEventListener("click", async(e)=>{
     myIndex = (myIndex+1)%(rollPos.length);
 
     // console.log("predefinedPos", myIndex)
@@ -62,7 +62,7 @@ document.getElementById("rolldice").addEventListener("click", async(e)=>{
         console.log("its done. Time to reset");
         document.querySelector('#red').style.marginLeft = '0vmin';
         document.querySelector('#red').style.marginTop = '0vmin';
-        // document.querySelectorAll('.options').style.opacity = 0;
+        $('.options').css("opacity", "0")
     }
 
 
@@ -144,9 +144,13 @@ function move(direction){
         if(direction == 'up'){
             document.querySelector("#red").style.marginTop = String(marginTop() - 9.8) + 'vmin'
         }else if(direction == 'right'){
-            document.querySelector("#red").style.marginLeft = String(marginLeft() + 9.8) + 'vmin'
+            document.querySelector("#red").style.marginLeft = String(marginLeft() + 9.8) + 'vmin';
+            $('.defaulticon').css("display", "block")
+            $('.lefticon').css("display", "none")
         }else if(direction == 'left'){
-            document.querySelector("#red").style.marginLeft = String(marginLeft() - 9.8) + 'vmin'
+            document.querySelector("#red").style.marginLeft = String(marginLeft() - 9.8) + 'vmin';
+            $('.defaulticon').css("display", "none")
+            $('.lefticon').css("display", "block")
         }
         await new Promise(resolve => setTimeout(resolve, 400))
         resolve()

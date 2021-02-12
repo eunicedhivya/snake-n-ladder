@@ -1,11 +1,12 @@
 let stopEvent = false;
 document.querySelector('#red').style.marginLeft = '0vmin';
 document.querySelector('#red').style.marginTop = '0vmin';
-            ////[0, 4, 22, 21, 63, 56, 76, 68, 62] 
-let rollPos = [0, 3, 6, 3, 3, 18, 2, 25, 11]
+            ////[0, 4, 26, 49, 22, 21, 63, 56, 76, 68, 62] 
+let rollPos = [0, 3, 10, 1, 15, 3, 3, 18, 2, 25, 11]
+// let rollPos = [0, 3, 6, 3, 3, 18, 2, 25, 11]
 let myIndex = 0;
 
-// boxNumbers();
+boxNumbers();
 
 $(".category").on("click", function(d){
     console.log(d.target.id);

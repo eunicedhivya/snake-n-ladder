@@ -29,9 +29,7 @@ document.getElementById("closeBtn").addEventListener("click", function() {
 
 
 document.querySelector(".defaulticon").addEventListener("click", async(e)=>{
-    // myIndex = (myIndex+1)%(rollPos.length);
     myIndex = (myIndex+1)%(rollPos.length);
-    // console.log(rollPos[myIndex]);
 
     console.log("predefinedPos", myIndex)
     
@@ -53,18 +51,29 @@ document.querySelector(".defaulticon").addEventListener("click", async(e)=>{
         }
         stopEvent = false;
 })
-// document.getElementById("rolldice").addEventListener("click", async(e)=>{
-//     myIndex = (myIndex+1)%(rollPos.length);
-//     console.log(rollPos[myIndex]);
-//         let isOutofRange =  checkRange(rollPos[myIndex]);
-//         document.querySelector('#dicenumber').innerHTML = rollPos[myIndex];
-//         await new Promise(resolve => setTimeout(resolve, 400))
-//         if(!isOutofRange){
-//             await run(rollPos[myIndex]);
-//             await new Promise(resolve => setTimeout(resolve, 400))
-//         }
-//         stopEvent = false;
-// })
+document.getElementById("rolldice").addEventListener("click", async(e)=>{
+    myIndex = (myIndex+1)%(rollPos.length);
+
+    console.log("predefinedPos", myIndex)
+    
+    if(myIndex === 0){
+        console.log("its done. Time to reset");
+        document.querySelector('#red').style.marginLeft = '0vmin';
+        document.querySelector('#red').style.marginTop = '0vmin';
+    }
+
+
+
+
+        let isOutofRange =  checkRange(rollPos[myIndex]);
+        document.querySelector('#dicenumber').innerHTML = rollPos[myIndex];
+        await new Promise(resolve => setTimeout(resolve, 400))
+        if(!isOutofRange){
+            await run(rollPos[myIndex]);
+            await new Promise(resolve => setTimeout(resolve, 400))
+        }
+        stopEvent = false;
+})
 
 // document.addEventListener("keydown", async(e)=>{
 //     // console.log(event.keyCode);

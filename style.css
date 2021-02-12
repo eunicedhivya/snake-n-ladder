@@ -1,3 +1,7 @@
+* {
+  font-family: "Lato", sans-serif;
+}
+
 body {
   background-color: #5f3200;
   margin: 0;
@@ -13,10 +17,10 @@ body {
 #main {
   position: absolute;
   margin: auto;
-  top: 0;
+  /* top: 0;
+  bottom: 0; */
   left: 0;
   right: 0;
-  bottom: 0;
   border: 0.1vmin solid black;
   height: 98vmin;
   width: 98vmin;
@@ -180,6 +184,31 @@ body {
   margin-bottom: 10px;
 }
 
+#message h1 {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 34px;
+  letter-spacing: 0.01em;
+}
+#message p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+}
+#message a {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+  background-color: #fff;
+  color: #000000;
+  padding: 4px 10px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
 @media only screen and (max-width: 600px) {
   #side {
     display: grid;
@@ -190,11 +219,41 @@ body {
   }
 
   #main {
-    top: 80px;
+    top: 0px;
   }
 
   .dice-section {
-    height: 14vmin;
+    height: 0;
     background-color: transparent;
+  }
+
+  #message h1 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+  }
+  #message p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+  }
+  #message a {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    background-color: #fff;
+    color: #000000;
+    padding: 4px 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 8px;
+  }
+
+  .model {
+    height: 150vmin;
+    width: 90vmin;
   }
 }

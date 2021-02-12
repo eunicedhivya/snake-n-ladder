@@ -118,9 +118,10 @@ body {
   height: 8vmin;
   width: 8vmin;
   border-radius: 50%;
-  opacity: 0.7;
+  opacity: 1;
   transition-duration: 0.4s;
   transition-property: margin;
+  cursor: pointer;
 }
 
 .players#red {
@@ -207,6 +208,27 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 8px;
+}
+
+.floating {
+  animation-name: floating;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-left: 0px;
+  margin-top: 0px;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 8px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
 }
 
 @media only screen and (max-width: 600px) {

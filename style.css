@@ -128,6 +128,53 @@ body {
   background-color: transparent;
 }
 
+.info-btn {
+  width: 3vmin;
+  position: absolute;
+  cursor: pointer;
+}
+
+#modal-4 {
+  top: 79vmin;
+  left: 40.5vmin;
+}
+#modal-26 {
+  top: 50vmin;
+  left: 69.5vmin;
+}
+#modal-49 {
+  top: 88.5vmin;
+  left: 59.5vmin;
+}
+#modal-22 {
+  top: 84.5vmin;
+  left: 25.8vmin;
+}
+#modal-21 {
+  top: 39.6vmin;
+  left: 0.8vmin;
+}
+#modal-63 {
+  top: 59.5vmin;
+  left: 20.5vmin;
+}
+#modal-56 {
+  top: 20.5vmin;
+  left: 59.5vmin;
+}
+#modal-76 {
+  top: 49.5vmin;
+  left: 20.5vmin;
+}
+#modal-68 {
+  top: 45.4vmin;
+  left: 94.3vmin;
+}
+#modal-62 {
+  top: 20.4vmin;
+  left: 1.3vmin;
+}
+
 .model {
   height: 80vmin;
   width: 90vmin;
@@ -142,9 +189,9 @@ body {
   text-align: center;
 }
 .model img {
-  width: 100%;
+  width: 80%;
   display: block;
-  margin-bottom: 22px;
+  margin: 0 auto 22px auto;
 }
 
 .model button {

@@ -28,6 +28,22 @@ document.getElementById("closeBtn").addEventListener("click", function() {
     document.querySelector('.model').style.display = "none";
 });
 
+$(".info-btn").on("click", function(e){
+    var getPos = $(this).data().pos
+    
+    fd = data.filter(function(d){
+        return d.startPosition === parseInt(getPos);
+    });
+    console.log("test", getPos, fd[0]);
+
+    document.querySelector('.modal-headline').innerHTML = fd[0]["headline"];
+    document.querySelector('.modal-desc').innerHTML = fd[0]["bodytext"];
+    document.querySelector('.modal-img').src=fd[0]["image"];
+    document.querySelector('.modal-link').href=fd[0]["link"];
+    document.querySelector('.model').style.display = "block";
+
+})
+
 
 document.querySelector(".players").addEventListener("click", async(e)=>{
     myIndex = (myIndex+1)%(rollPos.length);
@@ -117,9 +133,9 @@ function run(diceNum){
 function checkLaddersAndSnakers(){
     return new Promise(async(resolve, reject)=>{
 
-        // console.log(froms)
         for(let i=0; i<tos.length; i++){
             if(marginLeft() == froms[i][0] && marginTop() == froms[i][1]){
+                console.log("froms", i)
                 console.log("i", data[i]["snakeorladder"]+"-"+data[i]["startPosition"])
                 document.querySelector('#red').style.marginLeft = `${tos[i][0]}vmin`;
                 document.querySelector('#red').style.marginTop = `${tos[i][1]}vmin`;
@@ -130,6 +146,7 @@ function checkLaddersAndSnakers(){
                 document.querySelector('.modal-link').href=data[i]["link"];
                 document.querySelector('.model').style.display = "block";
                 document.querySelector('.'+data[i]["snakeorladder"]+"-"+data[i]["startPosition"]).style.opacity = 1;
+                document.querySelector('#modal-'+data[i]["startPosition"]).style.opacity = 1;
                 await new Promise(resolve => setTimeout(resolve, 400))
                 break
             }

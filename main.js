@@ -126,7 +126,7 @@ function checkLaddersAndSnakers(){
                 await new Promise(resolve => setTimeout(resolve, 400))
                 document.querySelector('.modal-headline').innerHTML = data[i]["headline"];
                 document.querySelector('.modal-desc').innerHTML = data[i]["bodytext"];
-                document.querySelector('.modal-img').src=data[i]["link"];
+                document.querySelector('.modal-img').src=data[i]["image"];
                 document.querySelector('.modal-link').href=data[i]["link"];
                 document.querySelector('.model').style.display = "block";
                 document.querySelector('.'+data[i]["snakeorladder"]+"-"+data[i]["startPosition"]).style.opacity = 1;

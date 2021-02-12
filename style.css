@@ -139,10 +139,12 @@ body {
   right: 0;
   bottom: 0;
   z-index: 10;
+  text-align: center;
 }
 .model img {
-  width: 80%;
+  width: 100%;
   display: block;
+  margin-bottom: 22px;
 }
 
 .model button {

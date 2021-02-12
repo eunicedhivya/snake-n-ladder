@@ -6,7 +6,7 @@ let rollPos = [0, 3, 10, 1, 15, 3, 3, 18, 2, 25, 11]
 // let rollPos = [0, 3, 6, 3, 3, 18, 2, 25, 11]
 let myIndex = 0;
 
-boxNumbers();
+// boxNumbers();
 
 $(".category").on("click", function(d){
     console.log(d.target.id);
@@ -32,12 +32,13 @@ document.getElementById("closeBtn").addEventListener("click", function() {
 document.querySelector(".defaulticon").addEventListener("click", async(e)=>{
     myIndex = (myIndex+1)%(rollPos.length);
 
-    console.log("predefinedPos", myIndex)
+    // console.log("predefinedPos", myIndex)
     
     if(myIndex === 0){
         console.log("its done. Time to reset");
         document.querySelector('#red').style.marginLeft = '0vmin';
         document.querySelector('#red').style.marginTop = '0vmin';
+        $('.options').css("opacity", "0")
     }
 
 
@@ -61,6 +62,7 @@ document.getElementById("rolldice").addEventListener("click", async(e)=>{
         console.log("its done. Time to reset");
         document.querySelector('#red').style.marginLeft = '0vmin';
         document.querySelector('#red').style.marginTop = '0vmin';
+        // document.querySelectorAll('.options').style.opacity = 0;
     }
 
 
@@ -118,6 +120,7 @@ function checkLaddersAndSnakers(){
         // console.log(froms)
         for(let i=0; i<tos.length; i++){
             if(marginLeft() == froms[i][0] && marginTop() == froms[i][1]){
+                console.log("i", data[i]["snakeorladder"]+"-"+data[i]["startPosition"])
                 document.querySelector('#red').style.marginLeft = `${tos[i][0]}vmin`;
                 document.querySelector('#red').style.marginTop = `${tos[i][1]}vmin`;
                 await new Promise(resolve => setTimeout(resolve, 400))
@@ -126,6 +129,7 @@ function checkLaddersAndSnakers(){
                 document.querySelector('.modal-img').src=data[i]["link"];
                 document.querySelector('.modal-link').href=data[i]["link"];
                 document.querySelector('.model').style.display = "block";
+                document.querySelector('.'+data[i]["snakeorladder"]+"-"+data[i]["startPosition"]).style.opacity = 1;
                 await new Promise(resolve => setTimeout(resolve, 400))
                 break
             }

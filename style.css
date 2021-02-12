@@ -231,6 +231,71 @@ body {
   }
 }
 
+.snakeorladder img {
+  transition: all 1s;
+}
+
+.snake-49 {
+  width: 22%;
+  position: absolute;
+  top: 54.5vmin;
+  left: 65.8vmin;
+}
+.snake-63 {
+  width: 16%;
+  position: absolute;
+  top: 34vmin;
+  left: 25.5vmin;
+}
+.snake-22 {
+  width: 11%;
+  position: absolute;
+  top: 73vmin;
+  left: 15vmin;
+}
+.snake-68 {
+  width: 24%;
+  position: absolute;
+  top: 34vmin;
+  left: 72vmin;
+}
+.snake-76 {
+  width: 24%;
+  position: absolute;
+  top: 24vmin;
+  left: 24.4vmin;
+}
+.ladder-4 {
+  width: 14%;
+  position: absolute;
+  top: 82vmin;
+  left: 34.4vmin;
+}
+.ladder-21 {
+  width: 3.6%;
+  position: absolute;
+  top: 45vmin;
+  left: 2.3vmin;
+}
+.ladder-26 {
+  width: 24%;
+  position: absolute;
+  top: 53vmin;
+  left: 55.4vmin;
+}
+.ladder-56 {
+  width: 23%;
+  position: absolute;
+  top: 25vmin;
+  left: 44.4vmin;
+}
+.ladder-62 {
+  width: 14%;
+  position: absolute;
+  top: 24vmin;
+  left: 4.4vmin;
+}
+
 @media only screen and (max-width: 600px) {
   #side {
     display: grid;

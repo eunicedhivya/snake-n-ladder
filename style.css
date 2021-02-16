@@ -38,7 +38,21 @@ body {
   border: none;
 }
 #about-game:hover {
-  opacity: 0.6;
+  opacity: 1;
+}
+#about-game:hover::before {
+  content: "How to Play ?";
+  width: 103px;
+  height: 27px;
+  line-height: 26px;
+  position: absolute;
+  background-color: #ab0004;
+  color: #fff;
+  top: 1.85vmin;
+  left: -77px;
+  border-radius: 10px;
+
+  transition: all 0.2s;
 }
 #about-game:focus {
   border: none;

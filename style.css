@@ -28,6 +28,27 @@ body {
   background-position: center;
 }
 
+#about-game {
+  position: absolute;
+  z-index: 100;
+  width: 65px;
+  top: 13.4vmin;
+  right: 0vmin;
+  background-color: transparent;
+  border: none;
+}
+#about-game:hover {
+  opacity: 0.6;
+}
+#about-game:focus {
+  border: none;
+  outline: none;
+}
+
+.defaulticon:hover {
+  opacity: 0.7;
+}
+
 .tile {
   float: left;
   height: 9.8vmin;
@@ -395,5 +416,9 @@ body {
   .model {
     height: 150vmin;
     width: 90vmin;
+  }
+
+  #about-game {
+    top: 11px;
   }
 }

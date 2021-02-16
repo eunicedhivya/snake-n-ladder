@@ -31,16 +31,32 @@ document.getElementById("closeBtn").addEventListener("click", function() {
 $(".info-btn").on("click", function(e){
     var getPos = $(this).data().pos
     
-    fd = data.filter(function(d){
-        return d.startPosition === parseInt(getPos);
-    });
-    console.log("test", getPos, fd[0]);
+    if(getPos === "about"){
 
-    document.querySelector('.modal-headline').innerHTML = fd[0]["headline"];
-    document.querySelector('.modal-desc').innerHTML = fd[0]["bodytext"];
-    document.querySelector('.modal-img').src=fd[0]["image"];
-    document.querySelector('.modal-link').href=fd[0]["link"];
-    document.querySelector('.model').style.display = "block";
+    
+        document.querySelector('.modal-headline').innerHTML = "The snakes and ladders in Sitharaman’s budget";
+        document.querySelector('.modal-desc').innerHTML = "Finance minister Nirmala Sitharaman’s latest budget has been hailed as a blueprint for growth in the wake of the crisis caused by the COVID pandemic. However, will all the measures announced by her act as a ladder to take India higher on the growth path or are there stumbling blocks that could come to bite like a snake and drag the country lower? Play on to find out.";
+        document.querySelector('.modal-img').style.display = "none";
+        document.querySelector('.modal-link').style.display = "none";
+        document.querySelector('.model').style.display = "block";
+
+    }else{
+
+        fd = data.filter(function(d){
+            return d.startPosition === parseInt(getPos);
+        });
+        console.log("test", getPos, fd[0]);
+        document.querySelector('.modal-img').style.display = "block";
+        document.querySelector('.modal-link').style.display = "block";
+        document.querySelector('.modal-headline').innerHTML = fd[0]["headline"];
+        document.querySelector('.modal-desc').innerHTML = fd[0]["bodytext"];
+        document.querySelector('.modal-img').src=fd[0]["image"];
+        document.querySelector('.modal-link').href=fd[0]["link"];
+        document.querySelector('.model').style.display = "block";
+
+    }
+
+    
 
 })
 
